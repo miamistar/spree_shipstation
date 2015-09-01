@@ -1,4 +1,4 @@
-** Modifications in this fork **
+**Modifications in this fork**
 - Fixed an issue with ordering not appearing in shipstation: including all states rather than only ready shipments.
 
 Done ;)
