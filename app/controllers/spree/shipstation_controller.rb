@@ -10,7 +10,7 @@ module Spree
 
     def export
       @shipments = Spree::Shipment.order(:id)
-                           .ready
+                           .where('spree_shipments.state != ?', 'pending')
                            .between(date_param(:start_date),
                                     date_param(:end_date))
                            .page(params[:page])
