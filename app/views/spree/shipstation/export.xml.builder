@@ -69,7 +69,7 @@ xml.Orders(pages: (@shipments.total_count/50.0).ceil) {
           variant = item.variant
           xml.Item {
             xml.SKU         variant.sku
-            xml.Name        [variant.product.name, variant.options_text].join(' ')
+            xml.Name        variant.product.name
             xml.ImageUrl    variant.images.first.try(:attachment).try(:url)
             xml.Weight      variant.weight.to_f
             xml.WeightUnits Spree::Config.shipstation_weight_units
